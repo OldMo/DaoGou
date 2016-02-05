@@ -26,12 +26,10 @@
 		 $news = new News();
 		 $lists = $news->AllList();
 
-		//加载首页显示模板
-		include_once YIMAI_TEMP.'index.html';
-
-	}elseif($act == 'display'){
-		//获取分类ID
-		$c_id = $_GET['id'];
+		 
+		 //获取分类ID
+		// $c_id = $_GET['id'];
+		$c_id = 4;
 
 		//接受商品列表显示页码
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -53,18 +51,10 @@
 		
 		//分页显示
 		//分页链接字符串
-		$pageString = Page::getPageStr('index.php','display',$counts,$page,$pagecount,$c_id);
+		$pageString = Page::getPageStr('index.php','index',$counts,$page,$pagecount,$c_id);
+		 
+		 
+		//加载首页显示模板
+		include_once YIMAI_TEMP.'index.html';
 
-		//加载显示某一类商品模板
-		include_once YIMAI_TEMP.'goods_display.html';
-
-	}elseif($act == 'view'){
-
-		$id = $_GET['id'];
-		$goods = new Goods();
-		$oneGoods = $goods->getGoodsById($id);
-		$_SESSION['uri'] = $_SERVER['REQUEST_URI'];
-		//加载商品细节模板
-		include_once YIMAI_TEMP.'goods_view.html';
-	
 	}
