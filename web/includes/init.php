@@ -23,13 +23,3 @@
 	//开启session入库
 	new Session();
 	session_start();
-	$user = new User();
-
-	//判断是否用户是否登陆过
-	if(isset($_SESSION['user_id'])){
-		//登陆过显示用户名
-		$display = $user -> getUserById($_SESSION['user_id'])['u_username'];	
-	}else{
-		//未登陆显示登陆注册
-		$display = "<a href='privilege.php'>登录</a><a href='privilege.php?act=register'>注册</a>";	
-	}

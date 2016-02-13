@@ -26,6 +26,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script src="js/simpleCart.min.js"> </script>
 <!-- cart -->
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+	<style>
+		div.pager a{
+			border:#aaaadd 1px solid;
+			text-decoration: none;
+			padding:2px 5px 2px 5px;
+			margin: 2px;
+		}
+
+		div.pager span.current{
+			border:#000099 1px solid;
+			background-color: #000099;
+			padding:4px 6px 4px 6px;
+			margin: 2px;
+			font-weight: bolder;
+			color:#fff
+		}
+
+	</style>
 </head>
 <body>
 	<!-- header-section-starts -->
@@ -71,46 +89,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					
 					<ul class="nav navbar-nav">
-					<li>
-						<div class="shipping">
-							<img src="images/qunzi.jpg" alt="" />
-						</div>
-						<div class="shipping-text">
-							<h5><a href="index.html">裙子</a></h5>
-						</div>
-					</li>
-					<li>
-						<div class="shipping">
-							<img src="images/shangyi.jpg" alt="" />
-						</div>
-						<div class="shipping-text">
-							<h5><a href="index.html">衣服</a></h5>
-						</div>
-					</li>
-					<li>
-						<div class="shipping">
-							<img src="images/kuzi.jpg" alt="" />
-						</div>
-						<div class="shipping-text">
-							<h5><a href="index.html">裤子</a></h5>
-						</div>
-					</li>
-					<li>
-						<div class="shipping">
-							<img src="images/xiezi.jpg" alt="" />
-						</div>
-						<div class="shipping-text">
-							<h5><a href="index.html">鞋子</a></h5>
-						</div>
-					</li>
-					<li>
-							<div class="shipping">
-							<img src="images/baobao.jpg" alt="" />
-						</div>
-						<div class="shipping-text">
-							<h5><a href="index.html">包包</a></h5>
-						</div>
-					</li>
+
+						<?php
+						//显示分类信息
+							foreach($categories as $category){
+								echo
+								 "<li>".
+									"<div class=\"shipping\">".
+										"<img src=\"".$category['category_logo']."\" alt=\"\" />".
+									"</div>".
+									"<div class=\"shipping-text\">".
+										"<h5><a href=\"index.php?id=".$category['id']."\">".$category['c_name']."</a></h5>".
+									"</div>".
+								 "</li>";
+
+							}
+						?>
 					
 					</ul>
 					
@@ -121,87 +115,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- content-section-starts-here -->
 		<div class="container">
 			<div class="main-content">
-			
+
 				<div class="products-grid">
 				<header>
 					<h3 class="head text-center">最新商品</h3>
 				</header>
+					<?php foreach($cartGoods as $cart_goods):?>
 					<div class="col-md-4 product simpleCart_shelfItem text-center">
-						<a href="single.html"><img src="images/p1.jpg" alt="" /></a>
+						<a href="index.php?act=view&id=<?php echo $cart_goods['id'];?>"><img src="images/product/1.jpg" alt="" /></a>
 						<div class="mask">
-							<a href="single.html">Quick View</a>
+							<a href="single.html">链接直达</a>
 						</div>
-						<a class="product_name" href="single.html">Sed ut perspiciatis</a>
-						<p><a class="item_add" href="#"><i></i> <span class="item_price">$329</span></a></p>
+						<a class="product_name" href="single.html"><?php echo $cart_goods['g_name'];?></a>
+						<p><a class="item_add" href="#"><i></i> <span class="item_price">$<?php echo $cart_goods['g_price'];?></span></a></p>
 					</div>
-					<div class="col-md-4 product simpleCart_shelfItem text-center">
-						<a href="single.html"><img src="images/p2.jpg" alt="" /></a>
-						<div class="mask">
-							<a href="single.html">Quick View</a>
-						</div>
-						<a class="product_name" href="single.html">great explorer</a>
-						<p><a class="item_add" href="#"><i></i> <span class="item_price">$599.8</span></a></p>
-					</div>
-					<div class="col-md-4 product simpleCart_shelfItem text-center">
-						<a href="single.html"><img src="images/p3.jpg" alt="" /></a>
-						<div class="mask">
-							<a href="single.html">Quick View</a>
-						</div>
-						<a class="product_name" href="single.html">similique sunt</a>
-						<p><a class="item_add" href="#"><i></i> <span class="item_price">$359.6</span></a></p>
-					</div>
-					<div class="col-md-4 product simpleCart_shelfItem text-center">
-						<a href="single.html"><img src="images/p4.jpg" alt="" /></a>
-						<div class="mask">
-							<a href="single.html">Quick View</a>
-						</div>
-						<a class="product_name" href="single.html">shrinking </a>
-						<p><a class="item_add" href="#"><i></i> <span class="item_price">$649.99</span></a></p>
-					</div>
-					<div class="col-md-4 product simpleCart_shelfItem text-center">
-						<a href="single.html"><img src="images/p5.jpg" alt="" /></a>
-						<div class="mask">
-							<a href="single.html">Quick View</a>
-						</div>
-						<a class="product_name" href="single.html">perfectly simple</a>
-						<p><a class="item_add" href="#"><i></i> <span class="item_price">$750</span></a></p>
-					</div>
-					<div class="col-md-4 product simpleCart_shelfItem text-center">
-						<a href="single.html"><img src="images/p6.jpg" alt="" /></a>
-						<div class="mask">
-							<a href="single.html">Quick View</a>
-						</div>
-						<a class="product_name" href="single.html">equal blame</a>
-						<p><a class="item_add" href="#"><i></i> <span class="item_price">$295.59</span></a></p>
-					</div>
-					<div class="col-md-4 product simpleCart_shelfItem text-center">
-						<a href="single.html"><img src="images/p7.jpg" alt="" /></a>
-						<div class="mask">
-							<a href="single.html">Quick View</a>
-						</div>
-						<a class="product_name" href="single.html">Neque porro</a>
-						<p><a class="item_add" href="#"><i></i> <span class="item_price">$380</span></a></p>
-					</div>
-					<div class="col-md-4 product simpleCart_shelfItem text-center">
-						<a href="single.html"><img src="images/p8.jpg" alt="" /></a>
-						<div class="mask">
-							<a href="single.html">Quick View</a>
-						</div>
-						<a class="product_name" href="single.html">perfectly simple</a>
-						<p><a class="item_add" href="#"><i></i> <span class="item_price">$540.6</span></a></p>
-					</div>
-					<div class="col-md-4 product simpleCart_shelfItem text-center">
-						<a href="single.html"><img src="images/p9.jpg" alt="" /></a>
-						<div class="mask">
-							<a href="single.html">Quick View</a>
-						</div>
-						<a class="product_name" href="single.html">praising pain</a>
-						<p><a class="item_add" href="#"><i></i> <span class="item_price">$229.5</span></a></p>
-					</div>
+
+					<?php endforeach;?>
 					<div class="clearfix"></div>
 				</div>
 			</div>
 
+			<div class="clear"></div>
+			<div class="pager">
+				<ul class="clearfix">
+					<?php echo $pageString;?>
+				</ul>
+			</div>
 		</div>
 		<!-- content-section-ends-here -->
 	

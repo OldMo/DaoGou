@@ -13,23 +13,13 @@
 		
 		//查看所有分类信息
 		$category = new Product();
-		$categories = $category->getProduct(); 
-		
-		//产看特价和热销产品
-		$goods = new Goods();
-		$goods_offer = $goods->getGoods(8);
-		$goods_hot = $goods->getGoods(12);
+		$categories = $category->getProduct();
 
 		$_SESSION['uri'] = $_SERVER['REQUEST_URI'];
 
-		//查寻新闻
-		 $news = new News();
-		 $lists = $news->AllList();
-
 		 
 		 //获取分类ID
-		// $c_id = $_GET['id'];
-		$c_id = 4;
+		 $c_id = $_GET['id'];
 
 		//接受商品列表显示页码
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;

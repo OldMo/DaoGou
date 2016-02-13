@@ -11,7 +11,7 @@
 			'charset' => 'utf8',
 			'host' => 'localhost',
 			'username' => 'root',
-			'pass' => 'admin',
+			'pass' => '',
 			'prefix' => 'ym_'
 
 		),
@@ -26,7 +26,7 @@
 			'font' => 5     
 		),
 
-		'pagecount' => 12,   //前台分页
+		'pagecount' => 4,   //前台分页
 
 		//每页显示留言数
 	   'guestbook_page' => 5
