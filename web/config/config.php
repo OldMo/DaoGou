@@ -11,7 +11,7 @@
 			'charset' => 'utf8',
 			'host' => 'localhost',
 			'username' => 'root',
-			'pass' => 'admin',
+			'pass' => '',
 			'prefix' => 'ym_'
 
 		),

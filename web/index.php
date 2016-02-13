@@ -4,7 +4,9 @@
 
 	//接受用户动作
 	$act = isset($_REQUEST['act']) ? $_REQUEST['act'] : 'index';
-	
+
+
+	echo $act;
 	//加载初始化文件
 	include_once './includes/init.php';
 
