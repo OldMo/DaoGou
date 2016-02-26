@@ -17,9 +17,13 @@
 
 		$_SESSION['uri'] = $_SERVER['REQUEST_URI'];
 
-		 
-		 //获取分类ID
-		 $c_id = $_GET['id'];
+		//获取分类ID
+		if(empty($_GET["id"])) {
+			 $c_id = 1;
+		}else{
+			$c_id = $_GET['id'];
+		 }
+		 echo $c_id;
 
 		//接受商品列表显示页码
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;

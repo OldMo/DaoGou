@@ -26,7 +26,7 @@
 			'font' => 5     
 		),
 
-		'pagecount' => 4,   //前台分页
+		'pagecount' => 8,   //前台分页
 
 		//每页显示留言数
 	   'guestbook_page' => 5
