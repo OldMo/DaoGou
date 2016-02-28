@@ -11,7 +11,7 @@
 	 */
      public function getProduct($stop_id = 0){
 	   //组织SQL
-	   $sql = "select * from ym_category";
+	   $sql = "select * from szg_category";
 
 	   //执行sql
 	   $products= $this->db_getAll($sql);

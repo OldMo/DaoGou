@@ -7,12 +7,12 @@
 			
 			'type' => 'mysql',
 			'port' => '3306',
-			'dbname' => 'shop',
+			'dbname' => 'daogou',
 			'charset' => 'utf8',
 			'host' => 'localhost',
 			'username' => 'root',
 			'pass' => '',
-			'prefix' => 'ym_'
+			'prefix' => 'szg_'
 
 		),
 
