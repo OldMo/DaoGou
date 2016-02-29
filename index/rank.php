@@ -11,9 +11,6 @@
 	//判断动作，处理动作
 	if($act == 'index'){
 		
-		//查看所有分类信息
-		$category = new Product();
-		$categories = $category->getProduct();
 
 		$_SESSION['uri'] = $_SERVER['REQUEST_URI'];
 

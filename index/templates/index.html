@@ -74,11 +74,11 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
 		<div class="choicerow">
 		<div class="caterowtitle"><span style="color:#959595;" class="cateitemword">类别：</span></div>
 		<a href="./" class="curcateitem"><span class="curcateitemword">全部</span></a>
-		<a href="./index.php?c=baby" class="cateitem"><span class="cateitemword">母婴</span></a>
-		<a href="./index.php?c=daily" class="cateitem"><span class="cateitemword">日用</span></a>
-		<a href="./index.php?c=digital" class="cateitem"><span class="cateitemword">数码</span></a>
-		<a href="./index.php?c=electrical" class="cateitem"><span class="cateitemword">家电</span></a>
-		<a href="./index.php?c=food" class="cateitem"><span class="cateitemword">食品</span></a>
+		<a href="./index.php?c=baby&id=1" class="cateitem"><span class="cateitemword">母婴</span></a>
+		<a href="./index.php?c=daily&id=2" class="cateitem"><span class="cateitemword">日用</span></a>
+		<a href="./index.php?c=digital&id=3" class="cateitem"><span class="cateitemword">数码</span></a>
+		<a href="./index.php?c=electrical&id=4" class="cateitem"><span class="cateitemword">家电</span></a>
+		<a href="./index.php?c=food&id=5" class="cateitem"><span class="cateitemword">食品</span></a>
 		<a href="./index.php?c=clothes" class="cateitem"><span class="cateitemword">服装</span></a>
 		<a href="./index.php?c=makeup" class="cateitem"><span class="cateitemword">美妆配饰</span></a>
 		<a href="./index.php?c=sport" class="cateitem"><span class="cateitemword">运动户外</span></a>
@@ -104,7 +104,7 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
 <?php foreach($cartGoods as $cart_goods):?>
 	<div class="cheapitem">
 		<div class="cheapimga">
-			<a isconvert=1 data-itemid="520559024016" target="_blank" href="http://detail.tmall.com/item.htm?id=520559024016"><img class="cheapimg" src="img06.taobaocdn.com/bao/uploaded/i3/TB1a8K0JpXXXXa.XVXXXXXXXXXX_!!0-item_pic.jpg"></a>
+			<a isconvert=1 data-itemid="520559024016" target="_blank" href="http://detail.tmall.com/item.htm?id=520559024016"><img class="cheapimg" src="<?php echo $cart_goods['g_image']?>"></a>
 		</div>
 		<div class="clear"></div>
 		<div class="cheapinfo">
@@ -117,8 +117,8 @@ A.info:hover    {color:green;background:transparent;text-decoration:underline}
 			</div>
 			<div class="clear"></div>
 			<div class="cheapprice">
-				<div class="cheappriceword" href="http://detail.tmall.com/item.htm?id=520559024016" target="_blank" onmousedown="clog('87335','price')">&yen;<?php echo $cart_goods['g_price'];?></div>
-				<div class="cheapgotobuy"><a isconvert=1 class="cheaptborilink" data-itemid="520559024016" target="_blank" href="http://detail.tmall.com/item.htm?id=520559024016">直达链接&gt;</a></div>
+				<div class="cheappriceword" href="<?php echo $cart_goods['g_url']?>" target="_blank" onmousedown="clog('87335','price')">&yen;<?php echo $cart_goods['g_price'];?></div>
+				<div class="cheapgotobuy"><a isconvert=1 class="cheaptborilink" data-itemid="520559024016" target="_blank" href="<?php echo $cart_goods['g_url']?>">直达链接&gt;</a></div>
 			</div>
 		</div>
 	</div><!-- div.cheapitem -->

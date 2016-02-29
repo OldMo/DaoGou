@@ -10,7 +10,7 @@ class MallSource extends MyPDO{
 	 */
 	 public function getMallSource(){
 	   //×éÖ¯SQL
-	   $sql = "select * from ".$table;
+	   $sql = "select * from szg_source";
 
 	   //Ö´ÐÐsql
 	   $sources= $this->db_getAll($sql);

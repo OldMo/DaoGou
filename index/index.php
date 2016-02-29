@@ -10,26 +10,23 @@
 
 	
 	//查看所有商品分类信息
-	$category = new Catgory();
+	$category = new Category();
 	$categories = $category->getCategory();
+	
 	
 	//查看所有商城信息
 	$mallSource = new MallSource();
 	$sources = $mallSource->getMallSource();
-
-	foreach($sources as $s){
-		$s["mallName"]
-	}
+	
 	
 	$_SESSION['uri'] = $_SERVER['REQUEST_URI'];
 
 	//获取分类ID
 	if(empty($_GET["id"])) {
-		 $c_id = 4;
+		 $c_id = 1;
 	}else{
 		$c_id = $_GET['id'];
 	 }
-	 echo $c_id;
 
 	//接受商品列表显示页码
 	$page = isset($_GET['page']) ? $_GET['page'] : 1;
