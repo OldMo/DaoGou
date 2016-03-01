@@ -39,18 +39,28 @@
 		 * return 成功返回二维数组，失败返回false
 		 */
 		public function getGoodsByCartId($c_id,$page,$pagecount){
-			
+		
 			//获取$offset
 			$offset = ($page - 1) * $pagecount;
+		
+			if($c_id == 0){
+				$sql = "select * from {$this->getTableName()} limit {$offset},{$pagecount}";  //获取全部
+			}else{
+				$sql = "select * from {$this->getTableName()} where c_id = '{$c_id}' limit {$offset},{$pagecount}";
+			}
+			
 			//SQL
-			$sql = "select * from {$this->getTableName()} where c_id = '{$c_id}' limit {$offset},{$pagecount}";
 			return $this->db_getAll($sql);
 		}
 		
-		//通过分类ID获取该类商品的总记录数
+		//通过分类ID获取该类商品的总记录数,若id=0，则为全部分类
 		public function getCartGoodsCounts($c_id){
 		
-			$sql = "select count(*) as c from {$this->getTableName()} where c_id = '{$c_id}'";
+			if($c_id == 0){
+				$sql = "select count(*) as c from {$this->getTableName()}";
+			}else{
+				$sql = "select count(*) as c from {$this->getTableName()} where c_id = '{$c_id}'";
+			}
 			return $this->db_getOne($sql);
 		}
 	}
