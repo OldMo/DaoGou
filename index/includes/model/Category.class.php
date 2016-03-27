@@ -46,6 +46,18 @@
 	    }
 	    //返回对应数组
 		return $list;
-	 }	 
+	 }
+
+	  /*
+     * 根据商城名查询商城ID
+     * return id
+    */
+	  public function getCategoryId($categoryName){
+		  //组织SQL
+		  $sql = "select * from szg_category where c_name ='".$categoryName."'";
+		  //执行sql
+		  $c = $this->db_getOne($sql);
+		  return $c;
+	  }
   }
   

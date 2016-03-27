@@ -1,22 +1,35 @@
- <?php
-  //ÉÌ³ÇÐÅÏ¢Àà
+<?php
+//å•†åŸŽä¿¡æ¯ç±»
 class MallSource extends MyPDO{
-//ÊôÐÔ
-	 protected $table ='szg_source';
-	 
-	 /*
-	  * ²éÑ¯·ÖÀà Êý¾Ý
-	  * return Êý×é£¬Ê§°Ü·µ»Ø ¿ÕÊý×é
-	 */
-	 public function getMallSource(){
-	   //×éÖ¯SQL
-	   $sql = "select * from szg_source";
+//å±žæ€§
+	protected $table ='szg_source';
 
-	   //Ö´ÐÐsql
-	   $sources= $this->db_getAll($sql);
-	   //µ÷ÓÃÎÞÏÞ¼¶·ÖÀà
+	/*
+     * æŸ¥è¯¢åˆ†ç±» æ•°æ®
+     * return æ•°ç»„ï¼Œå¤±è´¥è¿”å›ž ç©ºæ•°ç»„
+    */
+	public function getMallSource(){
+		//ç»„ç»‡SQL
+		$sql = "select * from szg_source";
+
+		//æ‰§è¡Œsql
+		$sources= $this->db_getAll($sql);
+		//è°ƒç”¨æ— é™çº§åˆ†ç±»
 		return $sources;
-	  }
+	}
+
+	/*
+     * æ ¹æ®å•†åŸŽåæŸ¥è¯¢å•†åŸŽID
+     * return id
+    */
+	public function getMallId($mallName){
+		//ç»„ç»‡SQL
+		$sql = "select * from szg_source where mallName ='".$mallName."'";
+//		var_dump($sql);
+		//æ‰§è¡Œsql
+		$m_id = $this->db_getOne($sql);
+		return $m_id['id'];
+	}
 }
-	  
+
 ?>

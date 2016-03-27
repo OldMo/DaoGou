@@ -53,4 +53,6 @@
 			$sql = "select count(*) as c from {$this->getTableName()} where c_id = '{$c_id}'";
 			return $this->db_getOne($sql);
 		}
+
+
 	}

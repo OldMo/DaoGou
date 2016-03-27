@@ -63,4 +63,17 @@
 			}
 			return $this->db_getOne($sql);
 		}
+
+		//新增商品
+		public function insertGoods($mall_id,$good_id,$good_name,$category_id,$good_price,$good_bar_price,$good_url,$good_image){
+			//var_dump($g_name,$g_send_message,$g_send_text);exit;
+			//sql语句
+			//var_dump($g_name);
+			if($g_name == ''){
+				$g_name = '匿名';
+			}
+			// var_dump($g_name);exit;
+			$sql="insert into ym_guestbook(g_name,g_send_message,g_send_text) values('{$g_name}','{$g_send_message}','{$g_send_text}')";
+			return $this->db_insert($sql);
+		}
 	}
