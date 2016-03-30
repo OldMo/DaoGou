@@ -65,15 +65,11 @@
 		}
 
 		//新增商品
-		public function insertGoods($mall_id,$good_id,$good_name,$category_id,$good_price,$good_bar_price,$good_url,$good_image){
+		public function insertGoods($good_id,$good_name,$mall_id,$category_id,$good_price,$good_bar_price,$good_url,$good_image){
 			//var_dump($g_name,$g_send_message,$g_send_text);exit;
 			//sql语句
-			//var_dump($g_name);
-			if($g_name == ''){
-				$g_name = '匿名';
-			}
 			// var_dump($g_name);exit;
-			$sql="insert into ym_guestbook(g_name,g_send_message,g_send_text) values('{$g_name}','{$g_send_message}','{$g_send_text}')";
+			$sql="insert into ym_goods(g_id,g_name,mall_id,c_id,g_price,g_bar_price,g_image,g_url,) values('{$good_id}','{$good_name}','{$mall_id}','{$category_id}','{$good_price}','{$good_bar_price}','{$good_image}','{$good_url}')";
 			return $this->db_insert($sql);
 		}
 	}

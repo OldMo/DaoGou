@@ -1,6 +1,9 @@
     <?php  
 	header("Content-type: text/html; charset=utf-8"); 
-	    include "TopSdk.php";
+	include "TopSdk.php";
+	$config = include_once "../config/config.php";
+	include "../includes/core/MyPDO.class.php";
+	include "../includes/model/Goods.class.php";
     date_default_timezone_set('Asia/Shanghai');
 	
 	$t = new thread_run('日用',true);
@@ -11,19 +14,22 @@
 	class thread_run extends Thread   
 	{
 		public $data;
+		public $goods;
 		public function __construct($data)
 		{
 			$this->data = $data;
+			$this->goods = new Goods();
 		}
 
 		public function run()
 		{
-		
+
 			echo $this->category.'--'.$this->isTMall.'<br/>';
-			$this->data = $this->api_data_get($this->category,$this->isTMall);
+			$this->insert_data($this->goods);
 		}  
 		
-		function insert_data(){
+		function insert_data($goodsDB){
+			$goodsDB->insertGoods();
 			
 		}
 		
