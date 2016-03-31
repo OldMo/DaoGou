@@ -27,21 +27,26 @@
 	$cate = new Category();
 	$categories = $cate->getCategory();
 	$index = 1;
+
 	foreach($categories as $key => $category){
-		api_data_get($client,$category['c_name'],$isTMall);
-	
+
+		for($page = 1; $page <= 10; $page++){
+//			$data = api_data_get($client,$category['c_name'],$isTMall,$page);
+			echo $category['c_name'].'---'.$isTMall.'---'.$page;
+		}
+
 		if($index >3)
 			break;
 			
 		$index++;
 	}
 
-	function api_data_get($client,$category,$isTMall)
+	function api_data_get($client,$category,$isTMall,$page)
 	{
 		$req = new TbkItemGetRequest;
 		echo '1';
 		$req->setFields("num_iid,title,pict_url,small_images,reserve_price,zk_final_price,item_url,user_type");
-		$req->setQ('日用');
+		$req->setQ($category);
 
 		//	$req->setCat("16,18");
 		// $req->setItemloc("杭州");
@@ -53,14 +58,14 @@
 		// $req->setStartTkRate("123");
 		// $req->setEndTkRate("123");
 		// $req->setPlatform("1");
-		// $req->setPageNo("123");
-		// $req->setPageSize("20");
+		 $req->setPageNo($page);
+		 $req->setPageSize("100");
 
 		$resp = $client->execute($req);
 
-		$totalResults = $resp->total_results;
-		echo 'totalResults:'.$totalResults.'<br/>';
-		return $totalResults;
+//		$totalResults = $resp->total_results;
+//		echo 'totalResults:'.$totalResults.'<br/>';
+		return $resp;
 	}
 
 
@@ -105,14 +110,6 @@
 //	$resp->asXml($filename);
 
 
-	/**
-	 * 提取信息并入库
-	 */
 
-	function analyseResults($result){
-		$results = $result->results;
-		$items = $results->n_tbk_item;
-		foreach($items as $item)
-			echo $item->title.'----'.$item->item_url.'<br/><br/>';
-		}
+
 ?>

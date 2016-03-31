@@ -11,13 +11,17 @@
 	
 	$t->api_data_get('日用',true);
 
-	class thread_run extends Thread   
+	class thread_db_insert extends Thread
 	{
 		public $data;
 		public $goods;
-		public function __construct($data)
+		public $mall_id;
+		public $category_id;
+		public function __construct($data,$mall_id,$category_id)
 		{
 			$this->data = $data;
+			$this->mall_id = $mall_id;
+			$this->category_id = $category_id;
 			$this->goods = new Goods();
 		}
 
@@ -25,45 +29,37 @@
 		{
 
 			echo $this->category.'--'.$this->isTMall.'<br/>';
-			$this->insert_data($this->goods);
-		}  
-		
-		function insert_data($goodsDB){
-			$goodsDB->insertGoods();
-			
+			$this->analyseResults($this->data);
 		}
-		
-		function api_data_get($category,$isTMall)
-		{  
-			echo '1';
-			$appkey = '23329942';
-			$secretKey = '96a5402b10955deea6c2d4a7d967f5e1';
-			$c = new TopClient;
-			$c->appkey = $appkey;
-			$c->secretKey = $secretKey;
-			$req = new TbkItemGetRequest;
-			echo '1';
-			$req->setFields("num_iid,title,pict_url,small_images,reserve_price,zk_final_price,item_url,user_type");
-			$req->setQ('日用');
-			
-			//	$req->setCat("16,18");
-			// $req->setItemloc("杭州");
-			// $req->setSort("tk_rate_des");
-			 $req->setIsTmall($isTMall);
-			// $req->setIsOverseas("false");
-			 $req->setStartPrice("9");
-			 $req->setEndPrice("10");
-			// $req->setStartTkRate("123");
-			// $req->setEndTkRate("123");
-			// $req->setPlatform("1");
-			// $req->setPageNo("123");
-			// $req->setPageSize("20");
-			
-			$resp = $c->execute($req);
-			
-			$totalResults = $resp->total_results;
-			echo 'totalResults:'.$totalResults.'<br/>';
-			return $totalResults;
-		}  
+
+		/**
+		 * 解析api返回的数据并将数据入库
+		 * @param $result
+		 */
+		function analyseResults($result){
+			$results = $result->results;
+			$items = $results->n_tbk_item;
+			foreach($items as $item){
+				echo $item->title.'----'.$item->item_url.'<br/><br/>';
+				$this->insert_data($item->num_iid,$item->title,$this->mall_id,$this->category_id,$item->reserve_price,
+					$item->zk_final_price,$item->item_url,$item->pict_url);
+			}
+		}
+
+		/**
+		 * 插入数据方法
+		 * @param $good_id
+		 * @param $good_name
+		 * @param $mall_id
+		 * @param $category_id
+		 * @param $good_price
+		 * @param $good_bar_price
+		 * @param $good_url
+		 * @param $good_image
+		 */
+		function insert_data($good_id,$good_name,$mall_id,$category_id,$good_price,$good_bar_price,$good_url,$good_image){
+			$this->goods->insertGoods($good_id,$good_name,$mall_id,$category_id,$good_price,$good_bar_price,$good_url,$good_image);
+
+		}
 	}  
     ?>  

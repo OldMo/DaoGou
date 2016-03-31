@@ -2,59 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aab7a358-3686-4428-9da7-d70256120c42" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index/taobao/FromXMLToDB.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/Autoloader.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/TopSdk.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/aliyun/AliyunClient.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/crawl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/test.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/ApplicationVar.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/ClusterTopClient.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/HttpdnsGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/RequestCheckUtil.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/ResultSet.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/SpiUtils.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/TopClient.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/TopLogger.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/Hotel.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/HotelImage.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/HotelOrder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/NTbkItem.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/NTbkShop.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/OrderGuest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/Room.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/RoomType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/SellerCat.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/Shop.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/ShopCat.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/domain/ShopScore.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/HotelAddRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/HotelGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/HotelImageUploadRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/HotelOrderGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/HotelOrdersSearchRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/HotelRoomAddRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/HotelRoomGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/HotelRoomUpdateRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/HotelRoomsUpdateRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/HotelSoldOrdersIncrementGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/HotelTypeAddRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/SellercatsListGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/ShopGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/ShopcatsListGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/TbkItemGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/TbkItemInfoGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/TbkItemRecommendGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/TbkShopGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/TbkShopRecommendGetRequest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GetTaobaoInfo/top/request/WirelessBuntingShopShorturlCreateRequest.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/config/config.php" afterPath="$PROJECT_DIR$/index/config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/includes/model/Category.class.php" afterPath="$PROJECT_DIR$/index/includes/model/Category.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/includes/model/Goods.class.php" afterPath="$PROJECT_DIR$/index/includes/model/Goods.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/includes/model/MallSource.class.php" afterPath="$PROJECT_DIR$/index/includes/model/MallSource.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/includes/model/Goods.class.php" afterPath="$PROJECT_DIR$/web/includes/model/Goods.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/taobao/crawl.php" afterPath="$PROJECT_DIR$/index/taobao/crawl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index/taobao/get.php" afterPath="$PROJECT_DIR$/index/taobao/get.php" />
     </list>
     <ignored path="DaoGou.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,21 +29,37 @@
       <file leaf-file-name="crawl.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index/taobao/crawl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78162915">
-              <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+            <state vertical-scroll-proportion="-0.16453382">
+              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Category.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index/includes/model/Category.class.php">
+      <file leaf-file-name="get.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index/taobao/get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="32" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="32" />
+            <state vertical-scroll-proportion="1.5789474">
+              <caret line="19" column="35" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Goods.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index/includes/model/Goods.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.703704">
+              <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="127" />
               <folding>
-                <marker date="1458996959966" expanded="true" signature="213:239" placeholder="select * fro... szg_category" />
-                <marker date="1458996959966" expanded="true" signature="1168:1228" placeholder="select * fro... szg_source" />
+                <marker date="1459348990157" expanded="true" signature="374:451" placeholder="select * fro... $" />
+                <marker date="1459348990157" expanded="true" signature="646:702" placeholder="select * fro... $" />
+                <marker date="1459348990157" expanded="true" signature="988:1042" placeholder="select * fro... $" />
+                <marker date="1459348990157" expanded="true" signature="1087:1164" placeholder="select * fro... $" />
+                <marker date="1459348990157" expanded="true" signature="1352:1378" placeholder="select count... $" />
+                <marker date="1459348990157" expanded="true" signature="1426:1498" placeholder="select count... $" />
+                <marker date="1459348990157" expanded="true" signature="1786:1970" placeholder="insert into ym_goods... " />
+                <marker date="1459348990157" expanded="true" signature="1786:1999" placeholder="insert into ym_goods... " />
               </folding>
             </state>
           </provider>
@@ -112,18 +78,8 @@
       <file leaf-file-name="MyPDO.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index/includes/core/MyPDO.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index/config/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+            <state vertical-scroll-proportion="-8.666667">
+              <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -134,16 +90,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="17" column="51" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index/includes/functions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -175,12 +121,13 @@
         <option value="$PROJECT_DIR$/GetTaobaoInfo/fileTest.php" />
         <option value="$PROJECT_DIR$/web/includes/model/Goods.class.php" />
         <option value="$PROJECT_DIR$/GetTaobaoInfo/crawl.php" />
-        <option value="$PROJECT_DIR$/index/includes/model/Goods.class.php" />
         <option value="$PROJECT_DIR$/index/config/config.php" />
         <option value="$PROJECT_DIR$/index/crawl.php" />
         <option value="$PROJECT_DIR$/index/taobao/FromXMLToDB.php" />
         <option value="$PROJECT_DIR$/index/includes/model/MallSource.class.php" />
         <option value="$PROJECT_DIR$/index/includes/model/Category.class.php" />
+        <option value="$PROJECT_DIR$/index/includes/model/Goods.class.php" />
+        <option value="$PROJECT_DIR$/index/taobao/get.php" />
         <option value="$PROJECT_DIR$/index/taobao/crawl.php" />
       </list>
     </option>
@@ -225,6 +172,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -380,7 +328,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -437,7 +384,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -475,20 +422,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/includes/init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/includes/init.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.0">
@@ -767,15 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,25 +719,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index/includes/core/MyPDO.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index/includes/model/MallSource.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6412478">
           <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index/includes/model/Goods.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.71577126">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -836,10 +745,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index/includes/model/Goods.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.703704">
+          <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="127" />
+          <folding>
+            <marker date="1459348990157" expanded="true" signature="374:451" placeholder="select * fro... $" />
+            <marker date="1459348990157" expanded="true" signature="646:702" placeholder="select * fro... $" />
+            <marker date="1459348990157" expanded="true" signature="988:1042" placeholder="select * fro... $" />
+            <marker date="1459348990157" expanded="true" signature="1087:1164" placeholder="select * fro... $" />
+            <marker date="1459348990157" expanded="true" signature="1352:1378" placeholder="select count... $" />
+            <marker date="1459348990157" expanded="true" signature="1426:1498" placeholder="select count... $" />
+            <marker date="1459348990157" expanded="true" signature="1786:1970" placeholder="insert into ym_goods... " />
+            <marker date="1459348990157" expanded="true" signature="1786:1999" placeholder="insert into ym_goods... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.666667">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/includes/core/MyPDO.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.666667">
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/taobao/get.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5789474">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/taobao/thread.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46793762">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index/taobao/crawl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78162915">
-          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+        <state vertical-scroll-proportion="-0.16453382">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
           <folding />
         </state>
       </provider>
