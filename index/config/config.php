@@ -11,7 +11,7 @@
 			'charset' => 'utf8',
 			'host' => 'localhost',
 			'username' => 'root',
-			'pass' => '',
+			'pass' => 'admin',
 			'prefix' => 'szg_'
 
 		),
