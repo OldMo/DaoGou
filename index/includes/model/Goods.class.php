@@ -68,8 +68,10 @@
 		public function insertGoods($good_id,$good_name,$mall_id,$category_id,$good_price,$good_bar_price,$good_url,$good_image){
 			//var_dump($g_name,$g_send_message,$g_send_text);exit;
 			//sql语句
-			// var_dump($g_name);exit;
-			$sql="insert into ym_goods(g_id,g_name,mall_id,c_id,g_price,g_bar_price,g_image,g_url,) values('{$good_id}','{$good_name}','{$mall_id}','{$category_id}','{$good_price}','{$good_bar_price}','{$good_image}','{$good_url}')";
+			$sql="insert into szg_goods(g_id,g_name,mall_id,c_id,g_price,g_bar_price,g_image,g_url) values('{$good_id}','{$good_name}','{$mall_id}','{$category_id}','{$good_price}','{$good_bar_price}','{$good_image}','{$good_url}')";
+			
+			print_r($sql);
 			return $this->db_insert($sql);
 		}
+		
 	}

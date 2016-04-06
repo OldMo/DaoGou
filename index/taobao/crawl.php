@@ -3,8 +3,9 @@
 	$config = include_once "../config/config.php";
 	include "../includes/core/MyPDO.class.php";
 	include "../includes/model/Category.class.php";
+	include "../includes/model/MallSource.class.php";
 	include "../includes/model/Goods.class.php";
-	include "get.php";
+	include "insert_db.php";
     include "TopSdk.php";
     date_default_timezone_set('Asia/Shanghai');
 	$appkey = '23329942';
@@ -13,18 +14,25 @@
 	$client->appkey = $appkey;
 	$client->secretKey = $secretKey;
 
-	$pageCount = 1;
-	$pageSize = 10;
+	$productCount = 1000;  //每一种类的商品需要获取的数据量
+	$pageCount = 1;    //需要存储记录的总页数
+	$pageSize = 1;     //每一页的记录数
 	
-	$isTMall = true;
-	if($isTMall)
-		$source = 'tmall';
-	else
-		$source = 'taobao';
+	/**
+	* 获取商城id
+	*/
+	$mallSouce = new MallSource();
+	$isTMall = false;
+	$isTMallStr = 'true';
+	if($isTMall){
+		$mallName = '天猫';
+	}else{
+		$mallName = '淘宝';
+		$isTMallStr = 'false';
+	}
 
-	
-	
-	$mall_id = 1;
+	$mall_id = $mallSouce->getMallId($mallName);
+
 	/**
 	 * 获取类型
 	 */
@@ -32,53 +40,84 @@
 	$categories = $cate->getCategory();
 	$index = 1;
 
+	$goods = new Goods();
 	foreach($categories as $key => $category){
 
 		if($index >1)
 			break;
 		$p_thread = [];
+		
+		$record_results = api_results_get($client,$category['c_name'],$isTMallStr);
+		// echo $record_results;
+		
+		//搜索记录数不足需要的记录量，则全部获取，如果超出需要的量，则只取需要的数据量
+		// if($record_results < $productCount){
+			// $pageCount = floor($record_results / $pageSize) + 1;
+		// }else{
+			// $pageCount = ($productCount / $pageSize);
+		// }
+		
+		
 		for($page = 1; $page <= $pageCount; $page++){
-			$data = api_data_get($client,$category['c_name'],$isTMall,$page,$pageSize);
+			$data = api_data_get($client,$category['c_name'],$isTMallStr,$page,$pageSize);
 			$product_info = analyseResults($data,$mall_id,$category['id']);
-			 $insertToDB = new thread_db_insert($product_info);
-			
-			 $p_thread[$page-1] = $insertToDB;
-			
-			 // print_r($product_info);
+			$insertToDB = new InsertDB($goods,$product_info);
+			$insertToDB->run_insert();
 		}
-		
-		foreach($p_thread as $p){
-			$p->start();
-		}
-
-		
 			
 		$index++;
 	}
+	
+	/**
+	*获取本次查询的总记录数
+	*/
+	function api_results_get($client,$category,$isTMallStr)
+	{
+		$req = new TbkItemGetRequest;
+		$req->setFields("num_iid");
+		$req->setQ('女装');
 
-	function api_data_get($client,$category,$isTMall,$page,$pageSize)
+		$pageStr = '1';
+		$pageSizeStr = '10';
+		
+		$req->setIsTmall($isTMallStr);
+		$req->setStartPrice("9");
+		$req->setEndPrice("10");
+		 $req->setPageNo($pageStr);
+		 $req->setPageSize($pageSizeStr);
+
+		$resp = $client->execute($req);
+		// print_r($resp);
+		$totalResults = $resp->total_results;
+		return $totalResults;
+	}
+
+	/**
+	* 获取查询的记录信息
+	*/
+	function api_data_get($client,$category,$isTMallStr,$page,$pageSize)
 	{
 		$req = new TbkItemGetRequest;
 		$req->setFields("num_iid,title,pict_url,small_images,reserve_price,zk_final_price,item_url,user_type");
 		$req->setQ($category);
 
+		$pageStr = ''.$page;
+		$pageSizeStr = ''.$pageSize;
+		
 		//	$req->setCat("16,18");
 		// $req->setItemloc("杭州");
-		// $req->setSort("tk_rate_des");
-		$req->setIsTmall($isTMall);
+		$req->setSort("tk_rate_des");
+		$req->setIsTmall($isTMallStr);
 		// $req->setIsOverseas("false");
 		$req->setStartPrice("9");
 		$req->setEndPrice("10");
 		// $req->setStartTkRate("123");
 		// $req->setEndTkRate("123");
 		// $req->setPlatform("1");
-		 $req->setPageNo($page);
-		 $req->setPageSize($pageSize);
+		 $req->setPageNo($pageStr);
+		 $req->setPageSize($pageSizeStr);
 
 		$resp = $client->execute($req);
-
-//		$totalResults = $resp->total_results;
-//		echo 'totalResults:'.$totalResults.'<br/>';
 		return $resp;
 	}
 
