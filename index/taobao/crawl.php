@@ -15,8 +15,8 @@
 	$client->secretKey = $secretKey;
 
 	$productCount = 1000;  //每一种类的商品需要获取的数据量
-	$pageCount = 1;    //需要存储记录的总页数
-	$pageSize = 1;     //每一页的记录数
+	$pageCount = 10;    //需要存储记录的总页数
+	$pageSize = 100;     //每一页的记录数
 	
 	/**
 	* 获取商城id
@@ -40,7 +40,12 @@
 	$categories = $cate->getCategory();
 	$index = 1;
 
-	$goods = new Goods();
+	$goodMethods = new Goods();
+	
+	ob_start();//打开输出控制缓冲
+    ob_end_flush();//输出缓冲区内容并关闭缓冲
+    ob_implicit_flush(1);//立即输出
+	
 	foreach($categories as $key => $category){
 
 		if($index >1)
@@ -50,22 +55,27 @@
 		$record_results = api_results_get($client,$category['c_name'],$isTMallStr);
 		// echo $record_results;
 		
-		//搜索记录数不足需要的记录量，则全部获取，如果超出需要的量，则只取需要的数据量
-		// if($record_results < $productCount){
-			// $pageCount = floor($record_results / $pageSize) + 1;
-		// }else{
-			// $pageCount = ($productCount / $pageSize);
-		// }
+		// 搜索记录数不足需要的记录量，则全部获取，如果超出需要的量，则只取需要的数据量
+		if($record_results < $productCount){
+			$pageCount = floor($record_results / $pageSize) + 1;
+		}else{
+			$pageCount = ($productCount / $pageSize);
+		}
 		
 		
 		for($page = 1; $page <= $pageCount; $page++){
 			$data = api_data_get($client,$category['c_name'],$isTMallStr,$page,$pageSize);
 			$product_info = analyseResults($data,$mall_id,$category['id']);
-			$insertToDB = new InsertDB($goods,$product_info);
-			$insertToDB->run_insert();
+			
+			$insertToDB = new InsertDB($product_info);
+			
+			$insertToDB->run_insert($goodMethods);
 		}
 			
 		$index++;
+		 sleep(2);
+        ob_flush();//输出缓冲区中的内容
+        flush();//刷新输出缓冲
 	}
 	
 	/**
@@ -75,7 +85,7 @@
 	{
 		$req = new TbkItemGetRequest;
 		$req->setFields("num_iid");
-		$req->setQ('女装');
+		$req->setQ($category);
 
 		$pageStr = '1';
 		$pageSizeStr = '10';
@@ -132,53 +142,11 @@
 		$products_value = array();
 		$index = 0;
 		foreach($items as $item){
-			 // echo $item->title.'----'.$item->item_url.'<br/><br/>';
 			$products_value[$index] = array('g_id'=>(string)($item[0]->num_iid),'g_name'=>(string)($item->title),'m_id'=>$mall_id,'c_id'=>$category_id,'g_price'=>(string)($item->reserve_price),'g_bar_price'=>(string)($item->zk_final_price),'g_url'=>(string)($item->item_url),'g_image'=>(string)($item->pict_url));
-			// $this->insert_data($item->num_iid,$item->title,$this->mall_id,$this->category_id,$item->reserve_price,$item->zk_final_price,$item->item_url,$item->pict_url);
 			$index++;
 		}
 		return $products_value;
 	}
-
-	
-	
-	
-	
-//	class thread_run extends Thread
-//	{
-//
-//		public $category;
-//		public $data;
-//		public $isTMall;
-//
-//		public function __construct($category, $isTMall)
-//		{
-//			$this->category = $category;
-//			$this->isTMall = $isTMall;
-//		}
-//
-//		public function run()
-//		{
-//
-//			echo $this->category . '--' . $this->isTMall . '<br/>';
-//			$this->data = $this->api_data_get($this->category, $this->isTMall);
-//		}
-//	}
-
-
-
-
-
-
-
-//	print_r($resp);
-
-	/**
-	 * 存储xml文件
-	 */
-//	$filename = 'xml/'.date('YmdH', time()).'-'.$source.'.xml';
-//	$resp->asXml($filename);
-
 
 
 

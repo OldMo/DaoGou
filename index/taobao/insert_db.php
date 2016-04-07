@@ -1,41 +1,36 @@
 <?php  
 header("Content-type: text/html; charset=utf-8"); 
 
-// $t = new thread_run('日用',true);
-// $t->start();
-
-// $t->api_data_get('日用',true);
-
 class InsertDB
 {
 	public $result_data;
-	public $goods;
-	public $mall_id;
-	public $category_id;
-	
-	public function __construct($good,$data)
+
+	public function __construct($data)
 	{	
 		$this->result_data = $data;
-        $goods =$good;
 	}
 
-	public function run_insert()
+	/*
+	* 批量插入更新数据
+	*/
+	public function run_insert($goodMethods)
 	{
-		// print_r($this->result_data);
-		global $goods;
+		$sqlStr = "insert into szg_goods(g_id,g_name,mall_id,c_id,g_price,g_bar_price,g_image,g_url,g_addtime) values";
 		foreach($this->result_data as $item){
-			 // echo $item->title.'----'.$item->item_url.'<br/><br/>';
-			// echo 'g_id--'.$item['g_id'].'--g_name--'.($item['g_name']).'--m_id--'.$item['m_id'].'--c_id--'.$item['c_id'].'--g_price--'.($item['g_price']).'--g_bar_price--'.($item['g_bar_price']).'--g_url--'.$item['g_url'].'--g_image--'.($item['g_image']).'<br/>';
+			echo 'g_id--'.$item['g_id'].'--g_name--'.($item['g_name']).'--m_id--'.$item['m_id'].'--c_id--'.$item['c_id'].'--g_bar_price--'.$item['g_bar_price'].'--g_url--'.$item['g_url'].'<br/>';
 			
-			$this->insert_data($goods,$item['g_id'],$item['g_name'],$item['m_id'],$item['c_id'],$item['g_price'],$item['g_bar_price'],$item['g_url'],$item['g_image']);
-		
+			 $sqlStr = $sqlStr.'(\''.$item['g_id'].'\',\''.$item['g_name'].'\','.$item['m_id'].','.$item['c_id'].','.$item['g_price'].','.$item['g_bar_price'].',\''.$item['g_image'].'\',\''.$item['g_url'].'\',now()),';
 		}
+		
+		$sqlStr = substr($sqlStr,0,strlen($sqlStr)-1). '  ON DUPLICATE KEY UPDATE g_name = values(g_name),mall_id = values(mall_id),c_id = values(c_id),g_price=values(g_price),g_bar_price=values(g_bar_price),g_image=values(g_image),g_url=values(g_url),g_updatetime=now()';
+		// echo $sqlStr;
+		
+		//数据插入更新
+		$goodMethods->insertGoods($sqlStr);
 	}
 	
-	
-	
 	/**
-	 * 插入数据方法
+	 * 单条记录插入
 	 * @param $good_id
 	 * @param $good_name
 	 * @param $mall_id
@@ -46,7 +41,7 @@ class InsertDB
 	 * @param $good_image
 	 */
 	function insert_data($goods,$good_id,$good_name,$mall_id,$category_id,$good_price,$good_bar_price,$good_url,$good_image){
-		$goods->insertGoods($good_id,$good_name,$mall_id,$category_id,$good_price,$good_bar_price,$good_url,$good_image);
+		$goods->insertGood($good_id,$good_name,$mall_id,$category_id,$good_price,$good_bar_price,$good_url,$good_image);
 	}
 }  
 ?>  

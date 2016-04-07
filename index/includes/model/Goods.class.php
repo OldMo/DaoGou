@@ -65,12 +65,18 @@
 		}
 
 		//新增商品
-		public function insertGoods($good_id,$good_name,$mall_id,$category_id,$good_price,$good_bar_price,$good_url,$good_image){
+		public function insertGood($good_id,$good_name,$mall_id,$category_id,$good_price,$good_bar_price,$good_url,$good_image){
 			//var_dump($g_name,$g_send_message,$g_send_text);exit;
 			//sql语句
 			$sql="insert into szg_goods(g_id,g_name,mall_id,c_id,g_price,g_bar_price,g_image,g_url) values('{$good_id}','{$good_name}','{$mall_id}','{$category_id}','{$good_price}','{$good_bar_price}','{$good_image}','{$good_url}')";
 			
 			print_r($sql);
+			return $this->db_insert($sql);
+		}
+		
+		//批量新增商品
+		public function insertGoods($sql){
+			//var_dump($g_name,$g_send_message,$g_send_text);exit;
 			return $this->db_insert($sql);
 		}
 		
